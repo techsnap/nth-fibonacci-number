@@ -18,6 +18,18 @@ def fib_memoized(n, d):
         return d[n]
 
 
+def fib_iterative(n):
+    if n < 2:
+    	return n
+    
+    a, b = 1, 2
+    for i in range(3, n):
+        c = a + b
+        a = b
+        b = c
+
+    return c
+
 n = int(input("Enter n(>= 0): "))
 
 print()
@@ -28,3 +40,7 @@ print()
 print("Using fib_memoized")
 print(f"F({n}) = {fib_memoized(n, d)}")
 print(f"Number of calls = {calls}")
+
+print()
+print("Using fib_iterative")
+print(f"F({n}) = {fib_iterative(n)}")
